@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+    artometrix_lab:
+        tty: true
+        stdin_open: true
+        image: fouyapen_labs_img
+        container_name: artometrix_labs
+        command: "/bin/bash"
+        build:
+          dockerfile: docker/Dockerfile
+          context: .
+        volumes:
+          - "./:/usr/code"
+        ports:
+          - "8087:8087"
+
