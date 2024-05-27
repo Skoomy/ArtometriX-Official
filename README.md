@@ -10,6 +10,7 @@
 
 - python 3.9
 - package manager pip or conda
+- Docker: https://www.docker.com/get-started
 
 ## Quickstart
 
@@ -24,3 +25,7 @@ pip install -r requirements.txt
 ```sh
 jupyter lab --port=8888
 ```
+
+## License
+
+This blog is licensed under the terms of the MIT license
