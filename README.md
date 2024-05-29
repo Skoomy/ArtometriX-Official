@@ -12,7 +12,6 @@
 > We are adding new articles so often that you should update often as well. That means: `git pull develop` in the main directory!
 
 
-
 ## 📚 Blog article
 
 - conjoint_analysis_for_measuring_customer_willingness_to_pay
