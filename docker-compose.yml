@@ -4,7 +4,8 @@ services:
     artometrix_lab:
         tty: true
         stdin_open: true
-        image: fouyapen_labs_img
+        image: arto_labs
+        restart: unless-stopped
         container_name: artometrix_labs
         command: "/bin/bash"
         build:
@@ -14,4 +15,6 @@ services:
           - "./:/usr/code"
         ports:
           - "8087:8087"
+        environment: 
+           JUPYTER_TOKEN: "docker777"
 

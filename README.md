@@ -1,6 +1,17 @@
+<div align="center">
+
 # ArtometriX-Official
 
+![Static Badge](https://img.shields.io/badge/python-3.9+-blue)
+![Static Badge](https://img.shields.io/badge/code_style-black-black)
 > Empowering Your Business with Data-Driven Strategies
+</div>
+
+
+> [!NOTE]
+> We are adding new articles so often that you should update often as well. That means: `git pull develop` in the main directory!
+
+
 
 ## 📚 Blog article
 
