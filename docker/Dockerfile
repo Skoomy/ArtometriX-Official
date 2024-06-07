@@ -1,4 +1,4 @@
-FROM python:3.9-slim-buster
+FROM python:3.10-slim-buster
 
 
 RUN apt-get update
@@ -14,9 +14,11 @@ RUN python -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 RUN /opt/venv/bin/python -m pip install --upgrade pip setuptools wheel
 
+RUN pip3 install --upgrade pip
+
 RUN pip install  pandas
 RUN pip install jupyterlab  matplotlib
-RUN pip install -U scikit-learn statsmodels
+RUN pip install -U scikit-learn statsmodels scipy statsmodels
 # # RUN pip install fbprophet
 # RUN pip install darts
 # RUN pip install sktime
@@ -26,3 +28,7 @@ RUN mkdir  usr/code
 ENV PATH="/opt/venv/bin:$PATH"
 ENV LD_LIBRARY_PATH="/opt/venv/lib"
 WORKDIR usr/code
+
+ENV JUPYTER_ENABLE_LAB=yes
+ENV JUPYTER_TOKEN=docker
+CMD ["jupyter-lab", "--ip='*'", "--port=8888", "--no-browser", "--allow-root"]
