@@ -49,6 +49,8 @@ jupyter lab --port=8888
 docker compose build
 ```
 
+make sure to change volume to match the path where the repository is located.
+
 ```sh
 docker compose up 
 ```
