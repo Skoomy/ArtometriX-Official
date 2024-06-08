@@ -1,20 +1,19 @@
-version: '3'
+version: '3.7'
 
 services:
-    artometrix_lab:
-        tty: true
-        stdin_open: true
-        image: arto_labs
-        restart: unless-stopped
-        container_name: artometrix_labs
-        command: "/bin/bash"
-        build:
-          dockerfile: docker/Dockerfile
-          context: .
-        volumes:
-          - "./:/usr/code"
-        ports:
-          - "8087:8087"
-        environment: 
-           JUPYTER_TOKEN: "docker777"
-
+  artometrix_lab:
+    tty: true
+    stdin_open: true
+    image: arto_labs
+    restart: unless-stopped
+    container_name: artometrix_lab
+    # command: "/bin/bash"
+    build:
+      dockerfile: docker/Dockerfile
+      context: ./
+    volumes:
+      - "/home/user/cyril/ArtometriX-Official:/home/user/cyril/ArtometriX-Official"
+    ports:
+      - "8087:8087"
+    environment:
+      JUPYTER_TOKEN: "docker777"

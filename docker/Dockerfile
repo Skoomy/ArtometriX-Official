@@ -25,10 +25,10 @@ RUN pip install -U scikit-learn statsmodels scipy statsmodels
 # RUN pip install shap
 EXPOSE 8087
 RUN mkdir  usr/code
-ENV PATH="/opt/venv/bin:$PATH"
-ENV LD_LIBRARY_PATH="/opt/venv/lib"
-WORKDIR usr/code
+# ENV PATH="/opt/venv/bin:$PATH"
+# ENV LD_LIBRARY_PATH="/opt/venv/lib"
+# WORKDIR usr/code
 
 ENV JUPYTER_ENABLE_LAB=yes
 ENV JUPYTER_TOKEN=docker
-CMD ["jupyter-lab", "--ip='*'", "--port=8888", "--no-browser", "--allow-root"]
+CMD ["jupyter-lab", "--ip='*'", "--port=8087", "--no-browser", "--allow-root"]
