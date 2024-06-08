@@ -7,7 +7,6 @@ services:
     image: arto_labs
     restart: unless-stopped
     container_name: artometrix_lab
-    # command: "/bin/bash"
     build:
       dockerfile: docker/Dockerfile
       context: ./

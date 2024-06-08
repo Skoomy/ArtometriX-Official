@@ -15,15 +15,19 @@
 
 ## 📚 Blog article
 
-- conjoint_analysis_for_measuring_customer_willingness_to_pay
+- Marketing 
+
+- Linear programming
+
+- Mathematical fundations
 
 ## 🎬 Prerequisites
 
-- python 3.9
+- python 3.10
 - package manager pip or conda
 - Docker: https://www.docker.com/get-started
 
-## Quickstart
+## Quickstart 1
 
 **Install dependencies**
 
@@ -36,6 +40,19 @@ pip install -r requirements.txt
 ```sh
 jupyter lab --port=8888
 ```
+
+## Quickstart 2
+
+**build docker images**
+
+```sh
+docker compose build
+```
+
+```sh
+docker compose up 
+```
+
 
 ## License
 
