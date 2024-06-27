@@ -55,6 +55,11 @@ make sure to change volume to match the path where the repository is located.
 docker compose up 
 ```
 
+Connect to remote compute 
+
+```
+ssh -L 8087:localhost:8087
+```
 
 ## License
 

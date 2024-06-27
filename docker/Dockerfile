@@ -27,7 +27,7 @@ RUN pip install refinitiv-data
 # # RUN pip install fbprophet
 # RUN pip install darts
 RUN pip install sktime
-RUN pip install shap
+RUN pip install shap requests
 EXPOSE 8087
 RUN mkdir  usr/code
 # ENV PATH="/opt/venv/bin:$PATH"
