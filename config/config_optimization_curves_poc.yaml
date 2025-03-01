@@ -16,24 +16,36 @@ response_curve:
     curve_shape:
       name: sigmoid
       parameters:
-        slope: 0.1
-        inflection_point: 0.5
-        saturation: 1.5
+        slope: 0.0005
+        inflection_point: 10000
+        saturation: 8
+
   - touchpoint_name: radio
     base_spend: 5000
     curve_shape:
-      name: linear
+      name: sigmoid
       parameters  :
-        slope: 0.1
+        slope: 0.0005
+        inflection_point: 8500
+        saturation: 3
+
+  - touchpoint_name: print
+    base_spend: 18000
+    curve_shape:
+      name: sigmoid
+      parameters  :
+        slope: 0.0003
+        inflection_point: 9000
+        saturation: 2.5
 
   - touchpoint_name: social_media
     base_spend: 2000
     curve_shape:
       name: exponential
       parameters:
-        rate: 0.1          # Growth rate of the exponential curve
-        scale: 100         # Scaling factor for the response
-        saturation: 1.5  
+        rate: 0.1   # Growth rate of the exponential curve
+        scale: 10         # Scaling factor for the response
+        saturation: 10  
 
 
 
@@ -50,4 +62,6 @@ visualization:
   height: 8                  # Figure height in inches
   dpi: 300                   # Resolution
   grid: true                 # Show grid lines
-  show_baseline: true    
+  templates: "plotly_dark"   # Plotly template to use
+  save_path: "response_curves.png"  # Path to save the plot
+ 

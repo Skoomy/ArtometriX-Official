@@ -70,9 +70,10 @@ docker run -it --rm -v $(pwd):/app arto_labs:latest /bin/bash
 
 ## Optimization 
 
+```bash
+python3 -m lib --pipeline='optimization_curves' --config_path='config/config_optimization_curves_poc.yaml'
 ```
-python3 -m lib --pipeline='optimization_curves'
-```
+
 ## License
 
 This blog is licensed under the terms of the MIT license
