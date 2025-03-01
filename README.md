@@ -61,6 +61,18 @@ Connect to remote compute
 ssh -L 8087:localhost:8087
 ```
 
+
+```sh
+docker run -it --rm -v $(pwd):/app arto_labs:latest /bin/bash
+```
+
+
+
+## Optimization 
+
+```
+python3 -m lib --pipeline='optimization_curves'
+```
 ## License
 
 This blog is licensed under the terms of the MIT license

@@ -24,6 +24,7 @@ RUN pip install  pandas
 RUN pip install jupyterlab  matplotlib pyomo 
 RUN pip install -U scikit-learn statsmodels scipy statsmodels sympy
 RUN pip install refinitiv-data
+RUN pip install Pyomo
 # # RUN pip install fbprophet
 # RUN pip install darts
 RUN pip install sktime
