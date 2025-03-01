@@ -1,0 +1,53 @@
+
+
+
+# General settings
+settings:
+  num_points: 20  # Number of discretization points for response curves
+  uplift_range: [0, 2.1]  # Range for uplift values (multiples of base spend)
+  budget_constraint: 1.0  # Budget constraint as a multiple of total base spend
+  solver: "glpk"  # Solver to use (glpk or cbc)
+
+
+
+response_curve:
+  - touchpoint_name: television
+    base_spend: 10000
+    curve_shape:
+      name: sigmoid
+      parameters:
+        slope: 0.1
+        inflection_point: 0.5
+        saturation: 1.5
+  - touchpoint_name: radio
+    base_spend: 5000
+    curve_shape:
+      name: linear
+      parameters  :
+        slope: 0.1
+
+  - touchpoint_name: social_media
+    base_spend: 2000
+    curve_shape:
+      name: exponential
+      parameters:
+        rate: 0.1          # Growth rate of the exponential curve
+        scale: 100         # Scaling factor for the response
+        saturation: 1.5  
+
+
+
+# Visualization settings
+visualization:
+  colors:
+    television: "#4285F4"    # Blue
+    radio: "#EA4335"         # Red
+    social_media: "#FBBC05"  # Yellow
+    digital: "#34A853"       # Green
+    print: "#8F44AD"         # Purple
+  plot_title: "Marketing Response Curves by Touchpoint"
+  width: 12                  # Figure width in inches
+  height: 8                  # Figure height in inches
+  dpi: 300                   # Resolution
+  grid: true                 # Show grid lines
+  show_baseline: true    
