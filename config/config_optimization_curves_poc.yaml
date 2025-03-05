@@ -39,13 +39,16 @@ response_curve:
         saturation: 2.5
 
   - touchpoint_name: social_media
-    base_spend: 2000
+    base_spend: 16000
     curve_shape:
-      name: exponential
+      name: sigmoid
       parameters:
-        rate: 0.1   # Growth rate of the exponential curve
-        scale: 10         # Scaling factor for the response
-        saturation: 10  
+        rate: 0.001   # Growth rate of the exponential curve
+        # scale: 100
+        slope: 0.0005
+        inflection_point: 15000
+         # Scaling factor for the response
+        saturation: 6  
 
 
 
