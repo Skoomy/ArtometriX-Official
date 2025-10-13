@@ -1,4 +1,4 @@
-FROM python:3.10-slim-buster
+FROM python:3.11-slim-bookworm
 
 
 RUN apt-get update
@@ -11,9 +11,16 @@ RUN  apt-get install -y build-essential libssl-dev libatlas-base-dev  libffi-dev
 RUN apt-get update && apt-get install -y \
     glpk-utils \
     && apt-get clean \
+
     && rm -rf /var/lib/apt/lists/*
 
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+    build-essential gcc g++ \
+    graphviz \
+    curl git \
+    && rm -rf /var/lib/apt/lists/*
 
+    
 # Ensure GLPK is installed correctly and add to PATH
 RUN apt-get update && apt-get install -y glpk-utils && \
     ln -s /usr/bin/glpsol /usr/local/bin/glpsol && \
@@ -55,6 +62,6 @@ EXPOSE 8087
 
 # ENV JUPYTER_ENABLE_LAB=yes
 # ENV JUPYTER_TOKEN=docker
-# CMD ["jupyter-lab", "--ip='*'", "--port=8087", "--no-browser", "--allow-root"]
+CMD ["jupyter-lab", "--ip='*'", "--port=8973", "--no-browser", "--allow-root"]
 
 # RUN python3 -m lib --pipeline='optimization_curves' --config_path='config/config_optimization_curves_poc.yaml'

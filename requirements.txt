@@ -129,3 +129,23 @@ wcwidth==0.2.13
 webcolors==24.11.1
 webencodings==0.5.1
 websocket-client==1.8.0
+# Jupyter
+jupyterlab>=4.2
+ipykernel>=6.29
+jupytext>=1.16
+
+# Core scientific stack
+numpy>=1.26
+pandas>=2.2
+scipy>=1.13
+scikit-learn>=1.5
+matplotlib>=3.9
+
+# Causality
+dowhy>=0.11
+dowhy-gcm>=1.0.0
+networkx>=3.3
+graphviz>=0.20.3  # python graphviz wrapper
+
+# Optional niceties
+tqdm>=4.66
