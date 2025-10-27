@@ -9,6 +9,6 @@ services:
     stdin_open: true
     container_name: stallion-beverages
     volumes:
-      - "."
+      - .:/app
     ports:
-      - "8080:8080"
+      - "8971:8971"

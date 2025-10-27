@@ -1,0 +1,9 @@
+data_source:
+  demographics: "data/demographics.csv"
+  event_calendar: "data/event_calendar.csv"
+  historical_volume: "data/historical_volume.csv"
+  prices_sales_promotions: "data/prices_sales_promotions.csv"
+  industry_soda_sales: "data/industry_soda_sales.csv"
+  weather: "data/weather.csv"
+  industry+volume: "data/industry_volume.csv"
+  

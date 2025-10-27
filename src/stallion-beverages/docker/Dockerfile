@@ -36,7 +36,8 @@ RUN conda install -c conda-forge \
 RUN conda install pytorch-forecasting pytorch>=1.7 -c pytorch -c conda-forge -y \
     && conda clean -afy
 
-RUN conda install -c conda-forge neuralforecast -y \
+RUN conda install -c conda-forge neuralforecast -y
+
 # Install Nixtla packages via pip
 RUN pip install --no-cache-dir \
     hierarchicalforecast \
@@ -61,7 +62,8 @@ RUN useradd -m -u 1000 nixtla && \
 USER nixtla
 
 # Expose JupyterLab port if needed
-EXPOSE 8888
+EXPOSE 8971
 
-# Set default command
-CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
+# Set default command to activate conda environment
+ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "nixtla"]
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8971", "--no-browser", "--allow-root"]
