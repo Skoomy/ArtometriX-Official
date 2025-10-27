@@ -3,6 +3,7 @@ import sys
 
 __version__ = "0.0.1"
 
+__author__ = "ArtometriX"
 
 # format = "[%(asctime)s][%(levelname)s][%(filename)s][%(module)s.%(funcName)s:%(lineno)d][PID%(process)d] %(message)s"
 _format = (

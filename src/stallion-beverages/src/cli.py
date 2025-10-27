@@ -35,17 +35,25 @@ def cli():
 @click.option(
     "--format",
     help="Output format",
-    type=click.Choice(["parquet", "csv", "feather"], case_sensitive=False),
+    type=click.Choice(["parquet", "csv", "feather","xlsx"], case_sensitive=False),
     default="parquet",
 )
 @timing
 def runner(pipeline: str, config: str, output: str, format: str):
     """Run a specific pipeline."""
-    # Setup logging
-    logging.basicConfig(
-        level=logging.INFO,
-        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    )
+
+
+    if pipeline =='data_loader':
+        from data_loader.run_data_loader import run_data_loader
+        logger.info("Running data loader pipeline")
+        config_path = Path(config) if config else None
+        output_path = Path(output) if output else None
+
+        run_data_loader(
+            config_path=config_path,
+            output_path=output_path,
+            output_format=format,
+        )   
 
     if pipeline == "feature_builder":
         from feature_builder.run_feature_builder import run_feature_builder
